@@ -1,17 +1,10 @@
-import { useState } from "react"
-import Efectos from "./temas/UseEffects/Efectos"
+import Fetch from "./temas/FETCH/Fetch"
+import PostAPI from "./temas/FETCH/PostAPI"
 
 function App() {
-  const [visible, setVisible] = useState(true);
-
-  const quitarComponente = () => {
-    setVisible(false);
-  }
-
   return (
     <>
-      {visible ? <Efectos /> : ""}
-      <button className="btn btn-danger" onClick={quitarComponente}>Quitar Componente</button>
+      <PostAPI />
     </>
   )
 }
