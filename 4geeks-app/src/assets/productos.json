@@ -1,0 +1,46 @@
+[
+    {
+        "id":1,
+        "marca":"Boss Orange",
+        "titulo":"Abrigo corto de poliéster y lana",
+        "descripcion":"Abrigo corto de poliéster y lana forrado en jacquard. Casual fit.",
+        "precio":299,
+        "precioOferta":0,
+        "imagen":"https://cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/202511/21/00115750100420____5__967x1200.jpg?impolicy=Resize&width=1200",
+        "categoria":"mujer",
+        "envioRapido":false
+    },
+    {
+        "id":2,
+        "marca":"Adolfo Dominguez",
+        "titulo":"Abrigo de mujer largo de punto",
+        "descripcion":"Abrigo largo en punto de doble frontura. Es de manga larga y cuenta con solapa, delantero cruzado con doble botonadura, bolsillos de vivo inclinados en delantero y abertura en espalda.",
+        "precio":199,
+        "precioOferta":119,
+        "imagen":"https://dam.elcorteingles.es/producto/www-8445574389595-00.jpg?impolicy=Resize&width=967&height=1200",
+        "categoria":"mujer",
+        "envioRapido":true
+    },
+    {
+        "id":3,
+        "marca":"Emidio Tucci",
+        "titulo":"Polo pique de hombre liso melange con bolsillo pecho",
+        "descripcion":"Polo pique de hombre liso melange con bolsillo pecho 100% algodón.",
+        "precio":49.95,
+        "precioOferta":0,
+        "imagen":"https://dam.elcorteingles.es/producto/www-001004913107902-00.jpg?impolicy=Resize&width=967&height=1200",
+        "categoria":"hombre",
+        "envioRapido":false
+    },
+    {
+        "id":4,
+        "marca":"Calvin Klein",
+        "titulo":"Abrigo acolchado de Hombre",
+        "descripcion":"Abrigo acolchado de hombre de Calvin Klein, confeccionado en 100% poliéster detalle con bolsillos de cremallera en el pecho y bolsillos con solapa a los laterales.",
+        "precio":299.90,
+        "precioOferta":0,
+        "imagen":"https://dam.elcorteingles.es/producto/www-001033711403882-00.jpg?impolicy=Resize&width=967&height=1200",
+        "categoria":"hombre",
+        "envioRapido":true
+    }
+]
