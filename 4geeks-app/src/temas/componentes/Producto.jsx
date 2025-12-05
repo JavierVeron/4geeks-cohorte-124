@@ -1,15 +1,21 @@
 import { useParams } from "react-router-dom"
-import productosJSON from "../../assets/productos.json"
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { CartContext } from "./context/CartContext";
+import useGlobalReducer from "./context/CartContextReducer";
 
 const Producto = () => {
+    //const {productos, agregarProductoCarrito} = useContext(CartContext);
+    const {state, dispatch} = useGlobalReducer();
     const [item, setItem] = useState({});
     const {productId} = useParams();
 
+    const agregarProductoCarrito = (id) => {        
+        dispatch({type:"AGREGAR_PRODUCTO", payload:id});
+    }
+
     useEffect(() => {
         if (productId) {
-            let producto = productosJSON.find(item => item.id == productId);
-            setItem(producto);
+            setItem(state.productos.find(item => item.id == productId));
         }
     }, [productId])
 
@@ -37,6 +43,7 @@ const Producto = () => {
                     <p>{item.titulo}</p>
                     <p>{item.precioOferta > 0 ? <span><b className="text-danger fs-5">{item.precioOferta} €</b> <span className="text-decoration-line-through fs-6">{item.precio} €</span></span> : <span>{item.precio} €</span>}</p>
                     <p>{item.descripcion}</p>
+                    <p><button className="btn btn-dark px-5" onClick={() => {agregarProductoCarrito(item.id)}}>Añadir</button></p>
                 </div>
             </div>
         </div>

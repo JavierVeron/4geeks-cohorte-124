@@ -1,14 +1,16 @@
 import { Link, useParams } from "react-router-dom"
-import productosJSON from "../../assets/productos.json"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { CartContext } from "./context/CartContext"
+import useGlobalReducer from "./context/CartContextReducer";
 
 const Productos = () => {
+    //const {productos} = useContext(CartContext);
+    const {state} = useGlobalReducer();
     const [items, setItems] = useState([]);
     const {categoryId} = useParams();    
 
     useEffect(() => {
-        let productos = categoryId ? productosJSON.filter(item => item.categoria == categoryId) : productosJSON;
-        setItems(productos);
+        setItems(categoryId ? state.productos.filter(item => item.categoria == categoryId) : state.productos);
     }, [categoryId])
 
     if (items.length == 0) {

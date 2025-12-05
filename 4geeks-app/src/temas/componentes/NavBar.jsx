@@ -1,6 +1,12 @@
+import { useContext } from "react"
 import { Link } from "react-router-dom"
+//import { CartContext } from "./context/CartContext"
+import useGlobalReducer from "./context/CartContextReducer"
 
 const NavBar = () => {
+    //const {totalCarrito} = useContext(CartContext);
+    const {state} = useGlobalReducer();
+
     return (
         <div className="container my-5">
             <div className="row">
@@ -22,7 +28,7 @@ const NavBar = () => {
                         <Link to={"/productos/mujer"} className="nav-link text-dark">Mujer</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to={"/carrito"} className="nav-link text-dark">Carrito</Link>
+                        <Link to={"/carrito"} className="nav-link text-dark">Carrito <b>({state.total})</b></Link>
                     </li>
                 </ul>
             </div>
