@@ -1,5 +1,5 @@
-import { useContext } from "react"
-import { CartContext } from "./context/CartContext"
+//import { useContext } from "react"
+//import { CartContext } from "./context/CartContext"
 import useGlobalReducer from "./context/CartContextReducer";
 
 const Carrito = () => {
@@ -41,7 +41,7 @@ const Carrito = () => {
                     <table className="table">
                         <tbody>
                             <tr>
-                                <td className="text-end" colSpan={6}><button className="btn btn-dark mx-5" onClick={vaciarCarrito}>Vaciar Carrito <i className="bi bi-trash"></i></button></td>
+                                <td className="text-end" colSpan={6}><button className="btn btn-dark btn-sm" onClick={vaciarCarrito}><i className="bi bi-trash"></i> Vaciar</button></td>
                             </tr>
                             {
                                 state.carrito.map(item => (
@@ -51,7 +51,7 @@ const Carrito = () => {
                                         <td className="align-middle">{item.precio} €</td>
                                         <td className="align-middle">x{item.cantidad}</td>
                                         <td className="align-middle">{item.precio * item.cantidad} €</td>
-                                        <td className="align-middle text-end"><button className="btn btn-dark mx-5" onClick={() => {eliminarProductoCarrito(item.id)}}>Eliminar <i className="bi bi-trash"></i></button></td>
+                                        <td className="align-middle text-end"><button className="btn btn-dark btn-sm" onClick={() => {eliminarProductoCarrito(item.id)}}><i className="bi bi-trash"></i> Eliminar</button></td>
                                     </tr>
                                 ))
                             }

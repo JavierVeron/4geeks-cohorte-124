@@ -6,9 +6,9 @@ import useGlobalReducer from "./context/CartContextReducer";
 const Productos = () => {
     //const {productos} = useContext(CartContext);
     const {state} = useGlobalReducer();
-    const [items, setItems] = useState([]);
-    const {categoryId} = useParams();    
-
+    const [items, setItems] = useState(state.productos);
+    const {categoryId} = useParams();
+    
     useEffect(() => {
         setItems(categoryId ? state.productos.filter(item => item.categoria == categoryId) : state.productos);
     }, [categoryId])

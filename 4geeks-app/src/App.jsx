@@ -1,10 +1,10 @@
-import Carrito from "./temas/componentes/Carrito"
-import Error404 from "./temas/componentes/Error404"
-import Footer from "./temas/componentes/Footer"
-import NavBar from "./temas/componentes/NavBar"
-import Producto from "./temas/componentes/Producto"
-import Productos from "./temas/componentes/Productos"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import NavBar from "./proyectos/ecommerce/NavBar"
+import Productos from "./proyectos/ecommerce/Productos"
+import Producto from "./proyectos/ecommerce/Producto"
+import Carrito from "./proyectos/ecommerce/Carrito"
+import Error404 from "./proyectos/ecommerce/Error404"
+import Footer from "./proyectos/ecommerce/Footer"
 
 function App() {
   return (
