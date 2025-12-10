@@ -1,8 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import NavBar from "./proyectos/lista-contactos/NavBar"
-import Contactos from "./proyectos/lista-contactos/Contactos"
-import Contacto from "./proyectos/lista-contactos/Contacto"
+import NavBar from "./proyectos/star-wars-blog/NavBar"
 import Error404 from "./proyectos/ecommerce/Error404"
+import Personajes from "./proyectos/star-wars-blog/Personajes"
 
 function App() {
   return (
@@ -10,9 +9,7 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path={"/"} element={<Contactos />} />
-          <Route path={"/contact"} element={<Contactos />} />
-          <Route path={"/addcontact"} element={<Contacto />} />
+          <Route path={"/"} element={<Personajes />} />
           <Route path={"*"} element={<Error404 />} />
         </Routes>
       </BrowserRouter>
