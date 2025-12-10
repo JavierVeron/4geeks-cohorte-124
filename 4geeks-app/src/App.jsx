@@ -1,10 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import NavBar from "./proyectos/ecommerce/NavBar"
-import Productos from "./proyectos/ecommerce/Productos"
-import Producto from "./proyectos/ecommerce/Producto"
-import Carrito from "./proyectos/ecommerce/Carrito"
+import NavBar from "./proyectos/lista-contactos/NavBar"
+import Contactos from "./proyectos/lista-contactos/Contactos"
+import Contacto from "./proyectos/lista-contactos/Contacto"
 import Error404 from "./proyectos/ecommerce/Error404"
-import Footer from "./proyectos/ecommerce/Footer"
 
 function App() {
   return (
@@ -12,14 +10,11 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path={"/"} element={<Productos />} />
-          <Route path={"/productos"} element={<Productos />} />
-          <Route path={"/productos/:categoryId"} element={<Productos />} />
-          <Route path={"/producto/:productId"} element={<Producto />} />
-          <Route path={"/carrito"} element={<Carrito />} />
+          <Route path={"/"} element={<Contactos />} />
+          <Route path={"/contact"} element={<Contactos />} />
+          <Route path={"/addcontact"} element={<Contacto />} />
           <Route path={"*"} element={<Error404 />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </>
   )
