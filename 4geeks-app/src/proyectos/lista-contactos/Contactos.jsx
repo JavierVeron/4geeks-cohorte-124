@@ -55,10 +55,6 @@ const Contactos = () => {
                                         <i className="bi bi-envelope"></i> {item.email}<br />
                                         <i className="bi bi-pen"></i> {item.phone}
                                     </span>
-                                    <span>
-                                        <i className="bi bi-pen"></i>
-                                        <i className="bi bi-trash"></i>
-                                    </span>
                                 </li>
                             ))
                         }
