@@ -2,40 +2,47 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Contactos = () => {
-    const SLUG = "javierveron";
+    const SLUG = "javierveron1";
     const BASEURL = "https://playground.4geeks.com/contact";
     const [contacts, setContacts] = useState([]);
 
-    const obtenerUsuario = () => {
+    const obtenerContactos = async () => {
         fetch(BASEURL + "/agendas/" + SLUG)
-        .then(response => {                      
-            if (response.status == 200) {                                
-                return response.json();
+        .then(response => {                                 
+            if (response.status == 404) {                                
+                return false;
             }
 
-            return false;
+            return response.json();
         })
-        .then(result => {            
-            setContacts(result.contacts);
+        .then(result => {
+            if (Array.isArray(result)) {
+                setContacts(result.contacts);
 
-            return true;
+                return true;
+            }
+            
+            return false;
         })
     }
 
-    const crearUsuario = () => {
+    const crearUsuario = async () => {
         fetch(BASEURL + "/agendas/" + SLUG, {
             method:"POST"
         })
-        .then(response => response.json())
-        .then(result => {
-            setContacts([]);
+        .then(response => {
+            if (response.status == 201) {
+                setContacts([]);
+            }
         })
     }
 
     useEffect(() => {
-        if (!obtenerUsuario()) {
-            crearUsuario();
-        }
+        (async () => {
+            if (!await obtenerContactos()) {
+                await crearUsuario();
+            }
+        })();
     }, [])
 
     return (
